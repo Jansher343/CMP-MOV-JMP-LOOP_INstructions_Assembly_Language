@@ -1,0 +1,25 @@
+ SOURCE CODE:
+‘’’’’’’’’’’’’’’’’’’’’’’’’’
+mov cx,10
+mov si,0   
+
+here1:
+
+
+    cmp msg[si],' '
+    JE here2 
+    AND msg[si],0DFH
+    
+here2:
+inc si
+loop here1
+
+lea dx,msg
+mov ah,9
+int 21h
+
+  ret
+
+  
+  msg db "helloworld$" 
+
